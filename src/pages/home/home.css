@@ -1,0 +1,21 @@
+:root {
+  --bg-color: #0f0f0f;
+  --txt-clr: #ffffff;
+  --main: #6947ef;
+  --purple: #6947ef;
+  --red: #ef476f;
+  --blue: #479eef;
+  --green: #4ec661;
+  --yellow: #cbac40;
+
+  --title-font: "Syne", sans-serif;
+  --txt-font-abel: "Abel", sans-serif;
+  --txt-font-raleway: "Raleway", sans-serif;
+  --txt-font-nobile: "Nobile", sans-serif;
+  --num-font: "JetBrains Mono", monospace;
+
+  --main-padding: 2rem;
+}
+.home li {
+  color: white;
+}
