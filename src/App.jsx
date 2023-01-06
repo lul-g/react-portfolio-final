@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./pages/header/header";
 import Home from "./pages/home/home";
 
-import { ReactComponent as Logo } from "./assets/logo.svg";
+import { ReactComponent as Logo } from "./assets/MEDIA/logo.svg";
 
 function App() {
   return (
@@ -21,8 +21,10 @@ function App() {
         </audio> */}
       </div>
 
-      <Header />
-      <Home />
+      <div className='landing-page'>
+        <Header />
+        <Home />
+      </div>
     </div>
   );
 }

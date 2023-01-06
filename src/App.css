@@ -1,4 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Abel&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Nobile:wght@400;500;700&family=Quattrocento&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Syne:wght@700;800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Audiowide&family=Electrolize&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Nobile:wght@400;500;700&family=Quattrocento&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Syne:wght@700;800&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("./assets/FONTS/Nippo_Complete/Fonts/WEB/css/nippo.css");
+@import url("./assets/FONTS/Stardom_Complete/Fonts/WEB/css/stardom.css");
+@import url("./assets/FONTS/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css");
 
 * {
   padding: 0;
@@ -10,7 +13,8 @@ html {
 }
 :root {
   --bg-color: #0f0f0f;
-  --txt-clr: #ffffff;
+  --txt-clr-primary: #ffffff;
+  --txt-clr-secondary: #c1bfbf;
   --main: #6947ef;
   --purple: #6947ef;
   --red: #ef476f;
@@ -18,17 +22,25 @@ html {
   --green: #4ec661;
   --yellow: #cbac40;
 
-  --title-font: "Syne", sans-serif;
+  --title-font-syne: "Syne", sans-serif;
+  --title-font-unbounded: "Unbounded", cursive;
+  --title-font-audiowide: "Audiowide", cursive;
+  --title-font-nippo: "Nippo-Variable";
+  --title-font-clash: "ClashDisplay-Variable";
+  --title-font-stardom: "Stardom-Regular";
+
   --txt-font-abel: "Abel", sans-serif;
   --txt-font-raleway: "Raleway", sans-serif;
+  --txt-font-electrolize: "Electrolize", sans-serif;
   --txt-font-nobile: "Nobile", sans-serif;
   --num-font: "JetBrains Mono", monospace;
 
+  --home-anime-delay: 0s;
   --main-padding: 2rem;
 }
 body {
   background-color: var(--bg-color);
-  overflow: hidden;
+  overflow-x: hidden;
 }
 .App {
   margin: 0 auto;
@@ -40,6 +52,7 @@ a,
 li {
   list-style: none;
   text-decoration: none;
+  color: var(--txt-clr-primary);
 }
 .preloader {
   background-color: var(--bg-color);
