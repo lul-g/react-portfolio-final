@@ -1,11 +1,12 @@
-.landing-page {
-  position: relative;
-}
 .home {
   display: flex;
   flex-direction: column;
   align-items: center;
   margin-bottom: 10rem;
+  position: sticky;
+  top: 30%;
+  height: fit-content;
+  width: 100%;
 }
 .float-txt {
   color: var(--txt-clr-primary);
@@ -28,16 +29,16 @@
 }
 .L {
   right: 10rem;
-  bottom: 0rem;
+  bottom: 2rem;
   animation: fade-in-right 0.5s 8.5s linear forwards;
 }
 .U {
-  top: 12rem;
+  top: -5rem;
   right: 25rem;
   animation: fade-in-right 0.5s 8s linear forwards;
 }
 .L-2 {
-  top: 50%;
+  top: 30%;
   left: 15rem;
   opacity: 0;
   animation: fade-in-left 0.5s 7.5s linear forwards;
@@ -146,7 +147,7 @@
   --height: 25rem;
   position: absolute;
   left: 0;
-  top: 60%;
+  top: 50%;
   transform: translateY(-50%);
   width: 10rem;
   height: 10rem;
@@ -216,18 +217,18 @@
 
 .shader {
   position: absolute;
-  top: 0;
+  top: -20%;
   left: 50%;
   transform: translate(-50%, -100%);
 
   background: radial-gradient(var(--main), var(--main));
-  width: 20rem;
-  aspect-ratio: 1/2;
+  width: 30rem;
+  aspect-ratio: 1/1;
   transform-origin: center;
   z-index: -1;
   opacity: 0;
   filter: blur(20rem);
-  animation: opacity 1s forwards cubic-bezier(1, 0, 0.165, 1);
+  animation: opacity 1s 2s forwards cubic-bezier(1, 0, 0.165, 1);
 }
 @keyframes fade-in-up {
   0% {

@@ -16,7 +16,7 @@ export default function Home() {
   }
 
   return (
-    <div className='home'>
+    <div className='home' id='home'>
       <span data-txt='L' className='L float-txt'>
         L
       </span>
@@ -38,22 +38,25 @@ export default function Home() {
         </p>
         <div className='socials'>
           <li>
-            <a href='https://discord.com/channels/Lul#1951'>
+            <a target='_blank' href='https://discord.com/channels/Lul#1951'>
               <i className='fa-brands fa-discord'></i>
             </a>
           </li>
           <li>
-            <a href=''>
+            <a target='_blank' href='https://github.com/lul-g'>
               <i className='fa-brands fa-github'></i>
             </a>
           </li>
           <li>
-            <a href=''>
+            <a
+              target='_blank'
+              href='https://www.linkedin.com/in/lulseged-admasu/'
+            >
               <i className='fa-brands fa-linkedin-in'></i>
             </a>
           </li>
           <li>
-            <a href=''>
+            <a target='_blank' href='https://twitter.com/lulseged_admasu'>
               <i className='fa-brands fa-twitter'></i>
             </a>
           </li>

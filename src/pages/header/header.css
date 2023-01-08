@@ -3,7 +3,7 @@
   --txt-clr-primary: #ffffff;
   --txt-clr-secondary: #c1bfbf;
   --main: #6947ef;
-  --purple: #6947ef;
+  --purple: rgb(105, 71, 239);
   --red: #ef476f;
   --blue: #479eef;
   --green: #4ec661;
@@ -23,18 +23,41 @@
   --num-font: "JetBrains Mono", monospace;
 
   --home-anime-delay: 0s;
-  --main-padding: 2rem;
+  --max-width: 1600px;
 }
 header {
-  padding: var(--main-padding) 15rem;
+  padding: 2rem 15rem 0 15rem;
 
+  position: sticky;
+
+  top: 0;
+  width: 100%;
+  z-index: 999;
+}
+.header_container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   position: relative;
+  top: 0;
+
+  background: rgba(0, 0, 0, 0);
+  transition: border ease-out 0.2s, all linear 0.3s;
+  border-radius: 70px;
+  padding: 3rem 3rem;
+  border: 2px solid transparent;
+  transform: translateY(-15rem);
+}
+.header_container.active {
+  transform: translateY(0);
+}
+.header_container.bg {
+  backdrop-filter: blur(5rem);
+  border: 2px solid var(--main);
 }
 .logo {
   width: 7rem;
+  height: 7rem;
   cursor: pointer;
   transition: 0.3s all ease;
   animation: translateY 0.5s 6.5s linear forwards;
@@ -113,6 +136,25 @@ header {
   animation: translateY 0.5s 6.5s linear forwards;
   opacity: 0;
   --opacity_num: 1;
+  /* position: relative; */
+}
+.nav-indicator p {
+  width: inherit;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+  position: absolute;
+  /* border: 2px solid red; */
+}
+.nav-indicator p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--txt-clr-primary);
 }
 .nav-indicator span {
   font-size: 1.5rem;
@@ -125,7 +167,7 @@ header {
 
   opacity: var(--opacity_num);
 }
-.contact {
+header .contact {
   --dimension: 7rem;
 
   font-size: 3rem;
@@ -157,7 +199,6 @@ header {
   border-radius: 50%;
 }
 .planet {
-  content: "";
   --dim: 0.8rem;
   aspect-ratio: 1/1;
   width: var(--dim);
@@ -170,6 +211,7 @@ header {
   transform: translate(-50%, -50%);
   transform-origin: 100%;
 }
+
 @keyframes translateY {
   0% {
     opacity: 0;
