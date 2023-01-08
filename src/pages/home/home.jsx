@@ -50,7 +50,7 @@ export default function Home() {
           <li>
             <a
               target='_blank'
-              href='https://www.linkedin.com/in/lulseged-admasu/'
+              href='https://www.linkedin.com/in/lulseged-admasu/recent-activity/'
             >
               <i className='fa-brands fa-linkedin-in'></i>
             </a>
@@ -63,7 +63,11 @@ export default function Home() {
         </div>
         <div className='shader'></div>
       </div>
-      <a href='' className='resume btn'>
+      <a
+        target='_blank'
+        href='https://resume-lul.netlify.app/'
+        className='resume btn'
+      >
         R
       </a>
       <div className='color-picker'>

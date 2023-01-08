@@ -15,9 +15,13 @@ export default function Header() {
   // on click, collapse nav, remove header
   let nav_list = document.querySelectorAll("nav > li");
   nav_list.forEach((link) => {
+    console.log();
     link.addEventListener("click", () => {
-      removeHeader();
-      document.querySelector(".nav-list").classList.remove("active");
+      document.querySelector("nav").classList.remove("active");
+      nav_list.forEach((el) => {
+        el.classList.remove("active");
+      });
+      link.classList.add("active");
     });
   });
   document.addEventListener("scroll", () => {

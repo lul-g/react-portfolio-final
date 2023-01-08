@@ -192,6 +192,7 @@ header .contact {
   animation: translateY 0.5s 1.5s linear forwards;
 
   opacity: 0;
+  background: transparent;
 }
 .orbital {
   position: absolute;
