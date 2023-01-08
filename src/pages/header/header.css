@@ -42,11 +42,14 @@ header {
   top: 0;
 
   background: rgba(0, 0, 0, 0);
-  transition: border ease-out 0.2s, all linear 0.3s;
+  transition: border linear 0.2s, all linear 0.3s;
   border-radius: 70px;
   padding: 3rem 3rem;
   border: 2px solid transparent;
-  transform: translateY(-15rem);
+  /* display: none; */
+}
+.header_container.remove {
+  transform: translateY(-20rem);
 }
 .header_container.active {
   transform: translateY(0);
@@ -60,7 +63,7 @@ header {
   height: 7rem;
   cursor: pointer;
   transition: 0.3s all ease;
-  animation: translateY 0.5s 6.5s linear forwards;
+  animation: translateY 0.5s 1.5s linear forwards;
   overflow: visible;
 
   opacity: 0;
@@ -82,6 +85,7 @@ header {
 }
 .nav-list i {
   font-size: 2rem;
+  cursor: pointer;
 }
 .nav-list li.active i {
   color: var(--main);
@@ -133,7 +137,7 @@ header {
 }
 .nav-indicator {
   transition: 0.3s all ease;
-  animation: translateY 0.5s 6.5s linear forwards;
+  animation: translateY 0.5s 1.5s linear forwards;
   opacity: 0;
   --opacity_num: 1;
   /* position: relative; */
@@ -185,7 +189,7 @@ header .contact {
   position: relative;
   cursor: pointer;
   transition: 0.3s all ease;
-  animation: translateY 0.5s 6.5s linear forwards;
+  animation: translateY 0.5s 1.5s linear forwards;
 
   opacity: 0;
 }

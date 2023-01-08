@@ -11,8 +11,8 @@ import { ReactComponent as Logo } from "./assets/MEDIA/logo.svg";
 
 function App() {
   setTimeout(() => {
-    window.scrollTo({ top: 0, left: 0 });
-  }, 3500);
+    document.querySelector(".website").style.display = "inline";
+  }, 5000);
   function proximityHover() {
     // get mouse position
     let mouseX = event.clientX;
@@ -43,12 +43,15 @@ function App() {
           <source src='../src/assets/MEDIA/fire_aduio.wav' type='audio/wav' />
         </audio>
       </div>
-      <Header />
-      <Home />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+
+      <div className='website'>
+        <Header />
+        <Home />
+        <About />
+        <Projects />
+        <Skills />
+        <Contact />
+      </div>
     </div>
   );
 }

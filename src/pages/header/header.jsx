@@ -4,7 +4,22 @@ import { ReactComponent as Logo } from "../../assets/MEDIA/logo_sm.svg";
 
 export default function Header() {
   let prevTop = 0;
+  function removeHeader() {
+    let header_cont = document.querySelector(".header_container");
 
+    header_cont.classList.remove("active");
+    header_cont.classList.add("remove");
+    header_cont.classList.remove("bg");
+  }
+  // get nav links
+  // on click, collapse nav, remove header
+  let nav_list = document.querySelectorAll("nav > li");
+  nav_list.forEach((link) => {
+    link.addEventListener("click", () => {
+      removeHeader();
+      document.querySelector(".nav-list").classList.remove("active");
+    });
+  });
   document.addEventListener("scroll", () => {
     let currTop =
       document.documentElement.scrollTop ||
@@ -23,9 +38,8 @@ export default function Header() {
     else if (currTop != 0 && currTop < prevTop) {
       header_cont.classList.add("active");
       header_cont.classList.add("bg");
-    } else if (currTop > 5000 && currTop > prevTop) {
-      header_cont.classList.remove("active");
-      header_cont.classList.remove("bg");
+    } else if (currTop > prevTop && currTop > 500) {
+      removeHeader();
     }
 
     prevTop = currTop;
@@ -47,8 +61,14 @@ export default function Header() {
           <Logo className='logo' />
         </a>
         <nav className='nav-list'>
-          <li className='active'>
-            <a href='#home'>
+          <li
+            className='active'
+            onClick={() => {
+              document.body.scrollTop = 0;
+              document.documentElement.scrollTop = 0;
+            }}
+          >
+            <a>
               <i className='fa-solid fa-house'></i>
             </a>
           </li>
@@ -58,12 +78,12 @@ export default function Header() {
             </a>
           </li>
           <li>
-            <a href=''>
+            <a href='#projects'>
               <i className='fa-solid fa-diagram-project'></i>
             </a>
           </li>
           <li>
-            <a href=''>
+            <a href='#skills'>
               <i className='fa-solid fa-file'></i>
             </a>
           </li>
