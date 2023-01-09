@@ -1,3 +1,5 @@
+import "../title/title.css";
+
 export default function PageHeading(props) {
   return (
     <div className='title'>

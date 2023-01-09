@@ -101,25 +101,11 @@
   font-weight: 700;
   font-size: large;
 }
-.socials {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  gap: 5rem;
-  align-items: center;
-
-  color: var(--txt-clr-primary);
-  font-size: 2.5rem;
-
+.home .socials {
   margin: 5rem 0 2rem 0;
   position: relative;
-  opacity: 0;
-  animation: fade-in-up 0.5s 2s linear forwards;
+  left: auto;
 }
-.socials li a {
-  cursor: pointer;
-}
-
 .btn {
   display: grid;
   place-items: center;
@@ -303,7 +289,7 @@
     width: var(--dim);
     height: var(--dim);
     border-radius: 50%;
-    border: dashed 2px var(--txt-clr-primary);
+    border: dashed 2px var(--main);
     animation: rotate 5s linear infinite;
   }
 }

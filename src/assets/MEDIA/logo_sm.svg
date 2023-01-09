@@ -1,7 +1,7 @@
 <svg width="144" height="137" viewBox="0 0 144 137" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="logo">
 <rect id="border-circle" x="2.5" y="2.5" width="132" height="132" rx="100" stroke="var(--main)" stroke-width="5"/>
-<circle id="circle-fill" cx="140" cy="19.5" r="8" fill="var(--main)"/>
+<circle id="circle-fill" cx="145" cy="19.5" r="8" fill="var(--main)"/>
 <!-- 136 -->
 <g id="txt">
 <path id="L" d="M66.12 103V46.2H71.72V98.04H104.52V103H66.12Z" fill="white"/>

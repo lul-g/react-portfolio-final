@@ -1,5 +1,5 @@
 import "./skills.css";
-import PageHeading from "../../title";
+import PageHeading from "../../components/title/title";
 
 export default function Skills() {
   return (

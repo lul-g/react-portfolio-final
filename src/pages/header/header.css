@@ -32,7 +32,8 @@ header {
 
   top: 0;
   width: 100%;
-  z-index: 999;
+  z-index: 99;
+  height: 0;
 }
 .header_container {
   display: flex;
@@ -47,6 +48,7 @@ header {
   padding: 3rem 3rem;
   border: 2px solid transparent;
   /* display: none; */
+  z-index: 999;
 }
 .header_container.remove {
   transform: translateY(-20rem);
@@ -67,7 +69,9 @@ header {
   overflow: visible;
 
   opacity: 0;
+  position: relative;
 }
+
 .logo .fire {
   opacity: 0;
   animation: light-up 0.5s 7s linear forwards;
@@ -177,11 +181,11 @@ header .contact {
   font-size: 3rem;
   font-family: var(--title-font-syne);
 
-  color: var(--txt-clr-primary);
   text-align: center;
   border: solid 3px var(--main);
   border-radius: 50%;
 
+  color: var(--txt-clr-primary);
   width: var(--dimension);
   height: var(--dimension);
   line-height: calc(var(--dimension) - 0.5rem);
@@ -194,6 +198,9 @@ header .contact {
   opacity: 0;
   background: transparent;
 }
+header .contact.active {
+  color: var(--main);
+}
 .orbital {
   position: absolute;
   top: 50%;
@@ -202,6 +209,19 @@ header .contact {
   aspect-ratio: 1/1;
   transform: translate(-50%, -50%);
   border-radius: 50%;
+}
+.orbital::after {
+  content: "";
+  position: absolute;
+  width: 130%;
+  aspect-ratio: 1/1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 2px dashed var(--main);
+  border-radius: inherit;
+  display: none;
 }
 .planet {
   --dim: 0.8rem;
@@ -243,6 +263,10 @@ header .contact {
   }
 }
 @media (hover: hover) {
+  .logo:hover::after {
+    display: inline;
+    animation: rotate-center 5s linear infinite forwards;
+  }
   .logo:hover #circle-fill {
     transform-origin: center;
     animation: rotate 3s linear forwards infinite;
@@ -250,8 +274,11 @@ header .contact {
   .nav-list li:hover i {
     color: var(--main);
   }
+  .contact:hover .orbital::after {
+    display: inline;
+  }
   .contact:hover .orbital {
-    animation: rotate-center 3s linear infinite;
+    animation: rotate-center 5s linear infinite forwards;
     transform: translate(-50%, -50%);
   }
 }

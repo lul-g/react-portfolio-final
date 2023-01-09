@@ -1,5 +1,5 @@
 import "./contact.css";
-import PageHeading from "../../title";
+import PageHeading from "../../components/title/title";
 
 export default function Contact() {
   return (

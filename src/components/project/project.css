@@ -25,34 +25,54 @@
   --home-anime-delay: 0s;
   --main-padding: 2rem;
 }
-.projects {
-  position: relative;
-  height: 200vh;
-  background: var(--bg-color);
+.project {
+  width: 50rem;
+  aspect-ratio: 2/1.1;
 
-  border: 2px solid red;
-}
-.projects .socials {
-  width: fit-content;
-  height: 27rem;
-  flex-direction: column;
+  border: 1px solid var(--main);
+  border-radius: 20px;
+  border-top: none;
+  color: var(--txt-clr-primary);
 
-  position: absolute;
-}
-.projects .socials::after {
-  content: "";
-  width: 1px;
-  height: 15rem;
-  background-color: var(--txt-clr-primary);
-
-  position: absolute;
-  bottom: -17rem;
-}
-.projects-grid {
-  margin: 10rem auto 0 auto;
-  width: 80%;
   display: grid;
-  gap: 10rem;
-  grid-template-columns: repeat(2, minmax(auto, 2fr));
-  /* grid-template-rows: repeat(); */
+  place-items: center;
+  position: relative;
+  z-index: 98;
+}
+
+.project .name {
+  position: absolute;
+  top: -1.5rem;
+  left: 2rem;
+
+  font-family: var(--title-font-audiowide);
+  font-size: 2rem;
+}
+.project .preview {
+  position: absolute;
+  top: -2rem;
+  right: 9rem;
+}
+.project .github {
+  position: absolute;
+  top: -2.4rem;
+
+  right: 3rem;
+}
+.project .img {
+  width: 80%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: inherit;
+  cursor: pointer;
+}
+.project .img img {
+  width: 100%;
+  object-fit: cover;
+}
+.project .img:hover img {
+  transition: all 10s linear;
+
+  transform: translateY(-86%);
 }

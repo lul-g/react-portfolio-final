@@ -1,0 +1,34 @@
+.title {
+  text-align: center;
+  position: relative;
+  width: fit-content;
+  margin: 0 auto;
+}
+.title h1 {
+  color: var(--txt-clr-primary);
+  font-family: var(--title-font-nippo);
+  letter-spacing: 0.5rem;
+  text-transform: uppercase;
+  font-size: 5rem;
+}
+.title p {
+  color: var(--main);
+  position: absolute;
+  bottom: 1rem;
+  right: -8rem;
+
+  font-size: 1.5rem;
+  font-family: var(--txt-font-electrolize);
+  font-weight: 900;
+  text-transform: uppercase;
+}
+.title p::after {
+  content: "";
+  position: absolute;
+  bottom: 0.3rem;
+  left: -10.5rem;
+
+  width: 10rem;
+  height: 0.1rem;
+  background-color: var(--main);
+}

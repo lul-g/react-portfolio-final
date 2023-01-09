@@ -1,5 +1,5 @@
 import "../about/About.css";
-import PageHeading from "../../title";
+import PageHeading from "../../components/title/title";
 import Circle from "./circle";
 import Me from "../../assets/MEDIA/me.png";
 export default function About() {

@@ -4,6 +4,23 @@ import { ReactComponent as Logo } from "../../assets/MEDIA/logo_sm.svg";
 
 export default function Header() {
   let prevTop = 0;
+  function collapseNav() {
+    document.querySelector("nav").classList.remove("active");
+  }
+  function activateLink() {
+    let nav_list = [...document.querySelectorAll("nav > li")];
+    let contact_btn = document.querySelector("header .contact");
+    nav_list.push(contact_btn);
+    nav_list.forEach((el) => {
+      el.classList.remove("active");
+    });
+    console.log(event.target.parentElement.tagName);
+    if (event.target.parentElement.classList.contains("contact")) {
+      event.target.parentElement.classList.add("active");
+    } else {
+      event.target.parentElement.parentElement.classList.add("active");
+    }
+  }
   function removeHeader() {
     let header_cont = document.querySelector(".header_container");
 
@@ -13,17 +30,7 @@ export default function Header() {
   }
   // get nav links
   // on click, collapse nav, remove header
-  let nav_list = document.querySelectorAll("nav > li");
-  nav_list.forEach((link) => {
-    console.log();
-    link.addEventListener("click", () => {
-      document.querySelector("nav").classList.remove("active");
-      nav_list.forEach((el) => {
-        el.classList.remove("active");
-      });
-      link.classList.add("active");
-    });
-  });
+
   document.addEventListener("scroll", () => {
     let currTop =
       document.documentElement.scrollTop ||
@@ -42,6 +49,7 @@ export default function Header() {
     else if (currTop != 0 && currTop < prevTop) {
       header_cont.classList.add("active");
       header_cont.classList.add("bg");
+      // scroll down
     } else if (currTop > prevTop && currTop > 500) {
       removeHeader();
     }
@@ -70,23 +78,40 @@ export default function Header() {
             onClick={() => {
               document.body.scrollTop = 0;
               document.documentElement.scrollTop = 0;
+              activateLink();
+              collapseNav();
             }}
           >
             <a>
               <i className='fa-solid fa-house'></i>
             </a>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              activateLink();
+              collapseNav();
+            }}
+          >
             <a href='#about'>
               <i className='fa-solid fa-circle-info'></i>
             </a>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              activateLink();
+              collapseNav();
+            }}
+          >
             <a href='#projects'>
               <i className='fa-solid fa-diagram-project'></i>
             </a>
           </li>
-          <li>
+          <li
+            onClick={() => {
+              activateLink();
+              collapseNav();
+            }}
+          >
             <a href='#skills'>
               <i className='fa-solid fa-file'></i>
             </a>
@@ -111,7 +136,14 @@ export default function Header() {
           <p id='prox'></p>
           <span>01</span>
         </div>
-        <a href='#contact' className='contact '>
+        <a
+          onClick={() => {
+            activateLink();
+            collapseNav();
+          }}
+          href='#contact'
+          className='contact '
+        >
           C
           <div className='orbital btn-orbit'>
             <div className='planet'></div>

@@ -53,73 +53,65 @@ body {
 .website {
   display: none;
 }
+.btn-pulse {
+  font-family: var(--title-font-nippo);
+  font-size: 1.5rem;
+
+  border: 1px solid var(--main);
+  font-weight: 500;
+  padding: 0 1em;
+  border-radius: 5px;
+
+  cursor: pointer;
+  z-index: 999;
+}
+.btn-pulse a {
+  color: var(--main);
+}
+.btn-pulse::after,
+.btn-pulse::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 1px solid var(--main);
+  border-radius: 5px;
+}
+
+.btn-pulse:hover::after {
+  animation: pulse 0.8s linear infinite;
+}
+
+.btn-icon-colorize {
+  font-size: 3rem;
+
+  border: 1px solid var(--main);
+  padding: 0.1em 0.2em;
+  border-radius: 10px;
+  z-index: 999;
+  transition: all ease 0.5s;
+  cursor: pointer;
+}
+.btn-icon-colorize:hover i {
+  color: var(--main);
+}
+.btn-fill-up {
+  font-size: 1.5rem;
+
+  border-radius: 5px;
+  padding: 0.5em 1em;
+  border: 1px solid var(--main);
+}
+
 a,
 li {
   list-style: none;
   text-decoration: none;
   color: var(--txt-clr-primary);
 }
-.preloader {
-  background-color: var(--bg-color);
-  position: absolute;
-  z-index: 999;
-  height: 100%;
-  width: 100%;
-  animation: pre-loader 0.2s 4.5s linear forwards;
-  /* display: none; */
-}
-.preloader svg {
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  height: 20rem;
-  width: 20rem;
-  transform: translate(-50%, -50%);
-  overflow: visible;
-}
-.preloader .fire {
-  opacity: 0;
-  animation: light-up-preloader 0.2s 3s linear forwards;
-}
-.preloader svg #circle-fill {
-  animation: rotate 3s linear forwards;
-  transform-origin: center;
-  z-index: 9999;
-}
-.title {
-  text-align: center;
-  position: relative;
-  width: fit-content;
-  margin: 0 auto;
-}
-.title h1 {
-  color: var(--txt-clr-primary);
-  font-family: var(--title-font-nippo);
-  letter-spacing: 0.5rem;
-  text-transform: uppercase;
-  font-size: 5rem;
-}
-.title p {
-  color: var(--main);
-  position: absolute;
-  bottom: 1rem;
-  right: -8rem;
 
-  font-size: 1.5rem;
-  font-family: var(--txt-font-electrolize);
-  font-weight: 900;
-  text-transform: uppercase;
-}
-.title p::after {
-  content: "";
-  position: absolute;
-  bottom: 0.3rem;
-  left: -10.5rem;
-
-  width: 10rem;
-  height: 0.1rem;
-  background-color: var(--main);
-}
 @keyframes light-up-preloader {
   0% {
     opacity: 0;
@@ -149,5 +141,17 @@ li {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 120%;
+    height: 160%;
+    opacity: 0;
   }
 }
