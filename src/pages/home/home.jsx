@@ -29,7 +29,8 @@ export default function Home() {
       </span>
       <div className='main-body'>
         <div>
-          <h1>Lulseged</h1> <h1>Admasu</h1>
+          <h1 data-txt='Lulseged'>Lulseged</h1>
+          <h1 data-txt='Admasu'>Admasu</h1>
         </div>
         <p>
           <span>FRONT DEVELOPER & DESIGNER,</span> From Ethiopia. Currently A

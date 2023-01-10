@@ -58,13 +58,26 @@
   font-weight: 900;
   line-height: 10rem;
   text-transform: uppercase;
+  /* -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: var(--main); */
   color: var(--txt-clr-primary);
-
   text-align: center;
   max-width: 45rem;
   position: relative;
   opacity: 0;
+
   top: 10rem;
+}
+.main-body h1::before {
+  /* content: attr(data-txt); */
+  position: absolute;
+  -webkit-text-fill-color: var(--main);
+  animation: wave 5s 0s ease-in-out infinite;
+
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 .main-body h1:nth-child(1) {
   animation: fade-in-up 0.5s 0s linear forwards;
@@ -264,14 +277,35 @@
     opacity: 1;
   }
 }
+@keyframes wave {
+  0%,
+  100% {
+    clip-path: polygon(
+      0 40%,
+      23% 49%,
+      48% 54%,
+      69% 51%,
+      86% 68%,
+      100% 79%,
+      100% 100%,
+      0 100%
+    );
+  }
+  50% {
+    clip-path: polygon(
+      0 63%,
+      25% 65%,
+      45% 61%,
+      65% 46%,
+      80% 41%,
+      100% 43%,
+      100% 100%,
+      0 100%
+    );
+  }
+}
 
 @media (hover: hover) {
-  .main-body h1:hover {
-    -webkit-text-fill-color: transparent;
-    -webkit-text-stroke-width: 2px;
-    -webkit-text-stroke-color: var(--main);
-    cursor: pointer;
-  }
   .socials li a:hover i {
     color: var(--main);
     transform: scale(1.3);

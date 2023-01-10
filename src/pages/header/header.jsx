@@ -14,7 +14,6 @@ export default function Header() {
     nav_list.forEach((el) => {
       el.classList.remove("active");
     });
-    console.log(event.target.parentElement.tagName);
     if (event.target.parentElement.classList.contains("contact")) {
       event.target.parentElement.classList.add("active");
     } else {

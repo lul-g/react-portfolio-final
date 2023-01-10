@@ -12,6 +12,15 @@ html {
   font-size: 62.5%;
   scroll-behavior: smooth;
 }
+::-moz-selection {
+  color: var(--txt-clr-primary);
+  background: var(--main);
+}
+
+::selection {
+  color: var(--txt-clr-primary);
+  background: var(--main);
+}
 :root {
   --bg-color: #0f0f0f;
   --txt-clr-primary: #ffffff;
@@ -65,9 +74,6 @@ body {
   cursor: pointer;
   z-index: 999;
 }
-.btn-pulse a {
-  color: var(--main);
-}
 .btn-pulse::after,
 .btn-pulse::before {
   content: "";
@@ -86,25 +92,54 @@ body {
 
 .btn-icon-colorize {
   font-size: 3rem;
+  background: transparent;
 
+  border: 1px solid transparent;
   border: 1px solid var(--main);
+
   padding: 0.1em 0.2em;
   border-radius: 10px;
   z-index: 999;
-  transition: all ease 0.5s;
+  transition: all ease 0.3s;
   cursor: pointer;
 }
-.btn-icon-colorize:hover i {
+.btn-icon-colorize i {
   color: var(--main);
 }
-.btn-fill-up {
-  font-size: 1.5rem;
-
-  border-radius: 5px;
-  padding: 0.5em 1em;
-  border: 1px solid var(--main);
+.btn-icon-colorize:hover {
+  background-color: var(--txt-clr-primary);
+  border: 1px solid transparent;
 }
+.btn-fill-up {
+  font-family: var(--title-font-nippo);
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: var(--txt-clr-primary);
 
+  border: 1px solid var(--main);
+  background: transparent;
+  font-weight: 500;
+  padding: 0 2em;
+  border-radius: 5px;
+
+  cursor: pointer;
+  z-index: 999;
+  position: relative;
+}
+.btn-fill-up::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: var(--main);
+  transition: all linear 0.3s;
+  z-index: -1;
+}
+.btn-fill-up:hover::after {
+  height: 100%;
+}
 a,
 li {
   list-style: none;
