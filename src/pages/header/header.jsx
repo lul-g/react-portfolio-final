@@ -9,6 +9,7 @@ export default function Header() {
   }
   function activateLink() {
     let nav_list = [...document.querySelectorAll("nav > li")];
+    let nav = document.querySelector(".nav-list");
     let contact_btn = document.querySelector("header .contact");
     nav_list.push(contact_btn);
     nav_list.forEach((el) => {
@@ -19,58 +20,63 @@ export default function Header() {
     } else {
       event.target.parentElement.parentElement.classList.add("active");
     }
+    nav.classList.remove("bg");
   }
   function removeHeader() {
-    let header_cont = document.querySelector(".header_container");
+    let logo = document.querySelector(".logo");
+    let contact = document.querySelector("header .contact");
+    let nav = document.querySelector(".nav-list");
 
-    header_cont.classList.remove("active");
-    header_cont.classList.add("remove");
-    header_cont.classList.remove("bg");
+    logo.classList.add("collapse");
+    contact.classList.add("collapse");
   }
-  // get nav links
-  // on click, collapse nav, remove header
+  function showHeader() {
+    let logo = document.querySelector(".logo");
+    let contact = document.querySelector("header .contact");
+    let nav = document.querySelector(".nav-list");
+
+    logo.classList.remove("collapse");
+    contact.classList.remove("collapse");
+  }
 
   document.addEventListener("scroll", () => {
     let currTop =
       document.documentElement.scrollTop ||
       document.body.scrollTop ||
       window.pageYOffset;
-    let header_cont = document.querySelector(".header_container");
-    // if at top, header active and no bg
-    // if scroll down, header inactive and no bg
-    // if scroll up and not top 0, header active and bg
 
     if (currTop === 0) {
-      header_cont.classList.add("active");
-      header_cont.classList.remove("bg");
-    }
-    // on scroll up
-    else if (currTop != 0 && currTop < prevTop) {
-      header_cont.classList.add("active");
-      header_cont.classList.add("bg");
-      // scroll down
-    } else if (currTop > prevTop && currTop > 500) {
+      showHeader();
+    } else {
       removeHeader();
     }
 
     prevTop = currTop;
   });
   function toggleNav() {
+    let header_cont = document.querySelector(".header_container");
     let nav = document.querySelector("nav");
+    let nav_list = document.querySelector(".nav-list");
     let navIndicator = document.querySelector(".nav-indicator");
-    let navIndicator_p = document.querySelector(".nav-indicator > p");
+
     nav.classList.toggle("active");
+    nav_list.classList.toggle("bg");
     if (nav.classList.contains("active")) {
       navIndicator.style.setProperty("--opacity_num", "0");
+    }
+    if (
+      document.documentElement.scrollTop ||
+      document.body.scrollTop ||
+      window.pageYOffset
+    ) {
+      removeHeader();
     }
   }
 
   return (
     <header className='header'>
       <div className='header_container'>
-        <a href='/'>
-          <Logo className='logo' />
-        </a>
+        <Logo className='logo' />
         <nav className='nav-list'>
           <li
             className='active'
@@ -115,6 +121,16 @@ export default function Header() {
               <i className='fa-solid fa-file'></i>
             </a>
           </li>
+          {/* <li
+            onClick={() => {
+              activateLink();
+              collapseNav();
+            }}
+          >
+            <a href='#contact'>
+              <i className='fa-solid fa-comment'></i>
+            </a>
+          </li> */}
         </nav>
         <div
           onClick={toggleNav}
@@ -130,7 +146,7 @@ export default function Header() {
               navIndicator.style.setProperty("--opacity_num", "1");
             }
           }}
-          className='nav-indicator btn'
+          className='nav-indicator btn '
         >
           <p id='prox'></p>
           <span>01</span>

@@ -11,7 +11,7 @@
 .float-txt {
   color: var(--txt-clr-primary);
   -webkit-text-stroke-width: 2px;
-  font-size: 8rem;
+  font-size: 6rem;
   font-family: var(--title-font-stardom);
 
   position: absolute;
@@ -20,8 +20,8 @@
 .float-txt::after {
   content: attr(data-txt);
   position: absolute;
-  top: 2rem;
-  left: -2rem;
+  top: 1rem;
+  left: -1rem;
   z-index: -1;
   -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 1px;
@@ -33,8 +33,8 @@
   animation: fade-in-right 0.5s 3.5s linear forwards;
 }
 .U {
-  top: -5rem;
-  right: 25rem;
+  top: -10rem;
+  right: 20rem;
   animation: fade-in-right 0.5s 3s linear forwards;
 }
 .L-2 {
@@ -54,9 +54,9 @@
 }
 .main-body h1 {
   font-family: var(--title-font-nippo);
-  font-size: 8rem;
+  font-size: 7rem;
   font-weight: 900;
-  line-height: 10rem;
+  line-height: 9rem;
   text-transform: uppercase;
   /* -webkit-text-fill-color: transparent;
   -webkit-text-stroke-width: 2px;
@@ -220,13 +220,14 @@
   left: 50%;
   transform: translate(-50%, -100%);
 
-  background: radial-gradient(var(--main), var(--main));
-  width: 30rem;
+  background: radial-gradient(var(--main), var(--bg-color));
+  border-radius: 50%;
+  width: 100rem;
   aspect-ratio: 1/1;
   transform-origin: center;
   z-index: -1;
   opacity: 0;
-  filter: blur(20rem);
+  filter: blur(15rem);
   animation: opacity 1s 1.5s forwards cubic-bezier(1, 0, 0.165, 1);
 }
 @keyframes fade-in-up {

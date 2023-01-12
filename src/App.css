@@ -74,57 +74,36 @@ body {
   cursor: pointer;
   z-index: 999;
 }
-.btn-pulse::after,
-.btn-pulse::before {
+.btn-pulse::after {
   content: "";
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
-  border: 1px solid var(--main);
+  border: 1px solid transparent;
   border-radius: 5px;
 }
 
 .btn-pulse:hover::after {
+  border: 1px solid var(--main);
   animation: pulse 0.8s linear infinite;
 }
 
-.btn-icon-colorize {
-  font-size: 3rem;
-  background: transparent;
-
-  border: 1px solid transparent;
-  border: 1px solid var(--main);
-
-  padding: 0.1em 0.2em;
-  border-radius: 10px;
-  z-index: 999;
-  transition: all ease 0.3s;
-  cursor: pointer;
-}
-.btn-icon-colorize i {
-  color: var(--main);
-}
-.btn-icon-colorize:hover {
-  background-color: var(--txt-clr-primary);
-  border: 1px solid transparent;
-}
 .btn-fill-up {
   font-family: var(--title-font-nippo);
   font-size: 1.5rem;
-  font-weight: 100;
-  color: var(--txt-clr-primary);
-
-  border: 1px solid var(--main);
-  background: transparent;
   font-weight: 500;
-  padding: 0 2em;
+
+  background: transparent;
+  color: var(--txt-clr-primary);
+  border: 1px solid var(--main);
   border-radius: 5px;
 
+  padding: 0 2rem;
+
   cursor: pointer;
-  z-index: 999;
-  position: relative;
+  z-index: 98;
 }
 .btn-fill-up::after {
   content: "";
@@ -134,11 +113,12 @@ body {
   width: 100%;
   height: 0;
   background: var(--main);
-  transition: all linear 0.3s;
+  transition: all linear 0.2s;
   z-index: -1;
 }
 .btn-fill-up:hover::after {
   height: 100%;
+  box-shadow: 0 0 2rem 0.1rem var(--main);
 }
 a,
 li {

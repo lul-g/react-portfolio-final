@@ -40,36 +40,62 @@ header {
   justify-content: space-between;
   align-items: center;
   position: relative;
-  top: 0;
+  height: 0;
+  top: 7rem;
 
-  background: rgba(0, 0, 0, 0);
   transition: border linear 0.2s, all linear 0.3s;
   border-radius: 70px;
-  padding: 3rem 3rem;
+  /* padding: 3rem 3rem; */
+  padding: 0;
   border: 2px solid transparent;
-  /* display: none; */
   z-index: 999;
 }
-.header_container.remove {
-  transform: translateY(-20rem);
+
+.logo.collapse {
+  left: 40rem;
+  /* visibility: hidden !important; */
+  /* z-index: -1; */
 }
-.header_container.active {
-  transform: translateY(0);
+header .contact.collapse {
+  right: 40rem;
+  /* visibility: hidden; */
+  /* z-index: -1; */
 }
-.header_container.bg {
-  backdrop-filter: blur(5rem);
-  border: 2px solid var(--main);
+.nav-indicator {
+  backdrop-filter: blur(0.5rem);
+}
+.nav-list::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 15rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 3px solid transparent;
+
+  background: rgba(0, 0, 0, 0);
+  transition: border ease 0.3s;
+}
+.nav-list.bg::before {
+  border: 3px dashed var(--main);
+  animation: rotate 10s linear infinite;
+  backdrop-filter: blur(3rem);
 }
 .logo {
   width: 7rem;
   height: 7rem;
   cursor: pointer;
-  transition: 0.3s all ease;
+  transition: 0.3s transform ease, all 0.6s ease, left 0.7s linear;
   animation: translateY 0.5s 1.5s linear forwards;
   overflow: visible;
-
+  left: 0;
+  transform: translateY(-50rem);
   opacity: 0;
   position: relative;
+  /* display: none; */
+  visibility: hidden !important;
+  z-index: -1;
 }
 
 .logo .fire {
@@ -86,6 +112,7 @@ header {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 2;
 }
 .nav-list i {
   font-size: 2rem;
@@ -134,16 +161,13 @@ header {
   left: -6rem;
   transition: all cubic-bezier(0.85, 0.05, 0.18, 1.35) 0.3s 0.9s;
 }
-@keyframes zoot-in {
-  0% {
-    transform: translateY();
-  }
-}
+
 .nav-indicator {
   transition: 0.3s all ease;
   animation: translateY 0.5s 1.5s linear forwards;
   opacity: 0;
   --opacity_num: 1;
+  z-index: 999;
   /* position: relative; */
 }
 .nav-indicator p {
@@ -191,12 +215,14 @@ header .contact {
   line-height: calc(var(--dimension) - 0.5rem);
 
   position: relative;
+  right: 0;
   cursor: pointer;
-  transition: 0.3s all ease;
+  transition: 0.3s transform ease, all 0.6s ease, right 0.7s linear;
   animation: translateY 0.5s 1.5s linear forwards;
 
   opacity: 0;
   background: transparent;
+  visibility: hidden;
 }
 header .contact.active {
   color: var(--main);

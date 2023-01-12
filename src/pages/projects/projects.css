@@ -27,8 +27,8 @@
 }
 .projects {
   position: relative;
-  height: 200vh;
   background: var(--bg-color);
+  padding-bottom: 10rem;
 }
 .projects .socials {
   width: fit-content;
@@ -48,15 +48,18 @@
 }
 .projects-grid {
   margin: 15rem auto 0 auto;
-  width: 60%;
+  width: 80%;
+  /* max-width: 135rem; */
   display: grid;
-  gap: 5rem;
-  grid-template-columns: repeat(2, minmax(auto, 1fr));
+  place-items: center;
+  gap: 5rem 3rem;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
 }
 .project:nth-child(2n) {
   position: relative;
-  top: 50%;
+  /* top: 50%; */
 }
+
 .projects .filters {
   display: flex;
   align-items: center;
@@ -65,7 +68,7 @@
 
   position: absolute;
   top: 15rem;
-  left: 15rem;
+  left: 25rem;
 }
 .projects .filter-btn {
   background-color: transparent;
@@ -75,7 +78,6 @@
 
   font-size: 1.5rem;
   font-family: var(--txt-font-electrolize);
-
   border: 1px solid transparent;
   padding: 0.5em 2em;
   border-radius: 5px;
@@ -87,9 +89,9 @@
   color: var(--main);
   border: 1px solid var(--main);
 }
-.projects .btn-fill-up {
-  position: absolute;
-  bottom: 25%;
+.projects .view-btn {
+  position: relative;
+  bottom: -5rem;
   left: 50%;
   transform: translateX(-50%);
 }
