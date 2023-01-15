@@ -1,0 +1,27 @@
+.preloader {
+  background-color: var(--bg-color);
+  position: absolute;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  animation: pre-loader 0.2s 4.5s linear forwards;
+  /* display: none; */
+}
+.preloader svg {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  height: 20rem;
+  width: 20rem;
+  transform: translate(-50%, -50%);
+  overflow: visible;
+}
+.preloader .fire {
+  opacity: 0;
+  animation: light-up-preloader 0.2s 3s linear forwards;
+}
+.preloader svg #circle-fill {
+  animation: rotate 3s linear forwards;
+  transform-origin: center;
+  z-index: 9999;
+}

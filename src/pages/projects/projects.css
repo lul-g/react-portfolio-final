@@ -1,0 +1,97 @@
+:root {
+  --bg-color: #0f0f0f;
+  --txt-clr-primary: #ffffff;
+  --txt-clr-secondary: #c1bfbf;
+  --main: #6947ef;
+  --purple: #6947ef;
+  --red: #ef476f;
+  --blue: #479eef;
+  --green: #4ec661;
+  --yellow: #cbac40;
+
+  --title-font-syne: "Syne", sans-serif;
+  --title-font-unbounded: "Unbounded", cursive;
+  --title-font-audiowide: "Audiowide", cursive;
+  --title-font-nippo: "Nippo-Variable";
+  --title-font-clash: "ClashDisplay-Variable";
+  --title-font-stardom: "Stardom-Regular";
+
+  --txt-font-abel: "Abel", sans-serif;
+  --txt-font-raleway: "Raleway", sans-serif;
+  --txt-font-electrolize: "Electrolize", sans-serif;
+  --txt-font-nobile: "Nobile", sans-serif;
+  --num-font: "JetBrains Mono", monospace;
+
+  --home-anime-delay: 0s;
+  --main-padding: 2rem;
+}
+.projects {
+  position: relative;
+  background: var(--bg-color);
+  padding-bottom: 10rem;
+}
+.projects .socials {
+  width: fit-content;
+  height: 27rem;
+  flex-direction: column;
+
+  position: absolute;
+}
+.projects .socials::after {
+  content: "";
+  width: 1px;
+  height: 15rem;
+  background-color: var(--txt-clr-primary);
+
+  position: absolute;
+  bottom: -17rem;
+}
+.projects-grid {
+  margin: 15rem auto 0 auto;
+  width: 80%;
+  /* max-width: 135rem; */
+  display: grid;
+  place-items: center;
+  gap: 5rem 3rem;
+  grid-template-columns: repeat(3, minmax(auto, 1fr));
+}
+.project:nth-child(2n) {
+  position: relative;
+  /* top: 50%; */
+}
+
+.projects .filters {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 30rem;
+
+  position: absolute;
+  top: 15rem;
+  left: 25rem;
+}
+.projects .filter-btn {
+  background-color: transparent;
+  border: none;
+  color: var(--txt-clr-primary);
+  cursor: pointer;
+
+  font-size: 1.5rem;
+  font-family: var(--txt-font-electrolize);
+  border: 1px solid transparent;
+  padding: 0.5em 2em;
+  border-radius: 5px;
+}
+.projects .filter-btn:hover {
+  color: var(--main);
+}
+.projects .filter-btn.active {
+  color: var(--main);
+  border: 1px solid var(--main);
+}
+.projects .view-btn {
+  position: relative;
+  bottom: -5rem;
+  left: 50%;
+  transform: translateX(-50%);
+}

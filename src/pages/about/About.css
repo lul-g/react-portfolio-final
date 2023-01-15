@@ -1,0 +1,117 @@
+:root {
+  --bg-color: #0f0f0f;
+  --txt-clr-primary: #ffffff;
+  --txt-clr-secondary: #c1bfbf;
+  --main: #6947ef;
+  --purple: #6947ef;
+  --red: #ef476f;
+  --blue: #479eef;
+  --green: #4ec661;
+  --yellow: #cbac40;
+
+  --title-font-syne: "Syne", sans-serif;
+  --title-font-unbounded: "Unbounded", cursive;
+  --title-font-audiowide: "Audiowide", cursive;
+  --title-font-nippo: "Nippo-Variable";
+  --title-font-clash: "ClashDisplay-Variable";
+  --title-font-stardom: "Stardom-Regular";
+
+  --txt-font-abel: "Abel", sans-serif;
+  --txt-font-raleway: "Raleway", sans-serif;
+  --txt-font-electrolize: "Electrolize", sans-serif;
+  --txt-font-nobile: "Nobile", sans-serif;
+  --num-font: "JetBrains Mono", monospace;
+
+  --home-anime-delay: 0s;
+  --main-padding: 2rem;
+}
+.about {
+  padding: 5rem 0 0 0;
+  margin: 0 auto;
+  /* height: 0; */
+  display: none;
+  visibility: hidden;
+  background-color: var(--bg-color);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  position: relative;
+  top: 0;
+}
+.about .main {
+  position: relative;
+  width: 100%;
+  height: 70rem;
+}
+.about .circle {
+  width: 20rem;
+  height: 20rem;
+  aspect-ratio: 1/1;
+
+  border: 3px solid var(--main);
+  background: var(--bg-color);
+  border-radius: 50%;
+
+  position: absolute;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.about .circle h3 {
+  position: absolute;
+  inset: 0;
+  width: 10rem;
+  height: 10rem;
+  color: var(--txt-clr-primary);
+}
+.about .circle p {
+  position: absolute;
+  width: 10rem;
+  height: 10rem;
+  color: var(--txt-clr-secondary);
+}
+.about .circle img {
+  position: absolute;
+
+  width: 20rem;
+  left: 10rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+}
+.about .circle::after {
+  content: "";
+  --dim: 2rem;
+  aspect-ratio: 1/1;
+  width: var(--dim);
+  border-radius: 50%;
+  background-color: var(--main);
+
+  position: absolute;
+  top: 15%;
+  right: -15%;
+  transform: translate(-50%, -50%);
+  transform-origin: 100%;
+}
+
+.about .main :nth-child(1) {
+  left: 30rem;
+  top: 0;
+}
+.about .main :nth-child(2) {
+  left: 30rem;
+  bottom: 15rem;
+  border-color: red;
+}
+.about .main :nth-child(3) {
+  right: 30rem;
+  top: 15rem;
+}
+.about .main :nth-child(4) {
+  right: 30rem;
+  bottom: 0;
+}
+.about .circle .orbital {
+  display: none;
+}
