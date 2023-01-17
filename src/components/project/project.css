@@ -1,0 +1,108 @@
+:root {
+  --bg-color: #0f0f0f;
+  --txt-clr-primary: #ffffff;
+  --txt-clr-secondary: #c1bfbf;
+  --main: #6947ef;
+  --purple: #6947ef;
+  --red: #ef476f;
+  --blue: #479eef;
+  --green: #4ec661;
+  --yellow: #cbac40;
+
+  --title-font-syne: "Syne", sans-serif;
+  --title-font-unbounded: "Unbounded", cursive;
+  --title-font-audiowide: "Audiowide", cursive;
+  --title-font-nippo: "Nippo-Variable";
+  --title-font-clash: "ClashDisplay-Variable";
+  --title-font-stardom: "Stardom-Regular";
+
+  --txt-font-abel: "Abel", sans-serif;
+  --txt-font-raleway: "Raleway", sans-serif;
+  --txt-font-electrolize: "Electrolize", sans-serif;
+  --txt-font-nobile: "Nobile", sans-serif;
+  --num-font: "JetBrains Mono", monospace;
+
+  --home-anime-delay: 0s;
+  --main-padding: 2rem;
+}
+.project {
+  width: 35rem;
+  /* min-width: 35rem; */
+  aspect-ratio: 2/1.1;
+
+  border: 1px solid var(--main);
+  border-radius: 20px;
+  border-top: none;
+  color: var(--txt-clr-primary);
+
+  display: grid;
+  place-items: center;
+
+  position: relative;
+  z-index: 98;
+  /* box-shadow: 0 .5rem 0rem 0 var(--main); */
+}
+.project::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 22rem;
+  height: 10rem;
+  border-radius: 100%;
+  background: var(--main);
+  filter: blur(15rem);
+  z-index: 9;
+  /* opacity: 0.2; */
+}
+
+.project .name {
+  position: absolute;
+  top: -2.5rem;
+  left: 2rem;
+
+  font-family: var(--title-font-nippo);
+  font-size: 2rem;
+  text-transform: capitalize;
+}
+.project .preview {
+  position: absolute;
+  top: -3rem;
+  left: 3rem;
+}
+.project .github {
+  position: absolute !important;
+  top: -3rem;
+  left: 18rem;
+  line-height: 4rem;
+  padding: 0 1rem;
+  font-size: 2.5rem;
+
+  border: 1px solid var(--main);
+  border-radius: 7px;
+  transition: all ease-out 0.3s;
+}
+.project .github:hover {
+  transform: scale(1.1);
+  box-shadow: 0 0 1rem 0rem var(--main);
+}
+.project .img {
+  width: 80%;
+  aspect-ratio: 2/1;
+  object-fit: cover;
+  overflow: hidden;
+  border-radius: 7px;
+  cursor: pointer;
+  z-index: 999;
+}
+.project .img img {
+  width: 100%;
+  object-fit:contain;
+  border-radius: 7px;
+
+}
+.project img.hover:hover  {
+  transition: all 10s linear;
+}

@@ -1,0 +1,310 @@
+:root {
+  --bg-color: #0f0f0f;
+  --txt-clr-primary: #ffffff;
+  --txt-clr-secondary: #c1bfbf;
+  --main: #6947ef;
+  --purple: rgb(105, 71, 239);
+  --red: #ef476f;
+  --blue: #479eef;
+  --green: #4ec661;
+  --yellow: #cbac40;
+
+  --title-font-syne: "Syne", sans-serif;
+  --title-font-unbounded: "Unbounded", cursive;
+  --title-font-audiowide: "Audiowide", cursive;
+  --title-font-nippo: "Nippo-Variable";
+  --title-font-clash: "ClashDisplay-Variable";
+  --title-font-stardom: "Stardom-Regular";
+
+  --txt-font-abel: "Abel", sans-serif;
+  --txt-font-raleway: "Raleway", sans-serif;
+  --txt-font-electrolize: "Electrolize", sans-serif;
+  --txt-font-nobile: "Nobile", sans-serif;
+  --num-font: "JetBrains Mono", monospace;
+
+  --home-anime-delay: 0s;
+  --max-width: 1600px;
+}
+header {
+  padding: 2rem 15rem 0 15rem;
+
+  position: sticky;
+  z-index: 99;
+
+  top: 0;
+  width: 100%;
+  height: 0;
+}
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  height: 0;
+  top: 7rem;
+
+  transition: border linear 0.2s, all linear 0.3s;
+  border-radius: 70px;
+  /* padding: 3rem 3rem; */
+  padding: 0;
+  border: 2px solid transparent;
+  z-index: 999;
+}
+
+.logo.collapse {
+  left: 40rem;
+  /* visibility: hidden !important; */
+  /* z-index: -1; */
+}
+header .contact.collapse {
+  right: 40rem;
+  /* visibility: hidden; */
+  /* z-index: -1; */
+}
+.nav-indicator {
+  backdrop-filter: blur(0.5rem);
+}
+.nav-list::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+
+  width: 15rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  border: 3px solid transparent;
+
+  background: rgba(0, 0, 0, 0);
+  transition: border ease 0.3s;
+}
+.nav-list.bg::before {
+  border: 3px dashed var(--main);
+  animation: rotate 10s linear infinite;
+  backdrop-filter: blur(3rem);
+}
+.logo {
+  width: 7rem;
+  height: 7rem;
+  cursor: pointer;
+  transition: 0.3s transform ease, all 0.6s ease, left 0.7s linear;
+  animation: translateY 0.5s 1.5s linear forwards;
+  overflow: visible;
+  left: 0;
+  transform: translateY(-50rem);
+  opacity: 0;
+  position: relative;
+  /* display: none; */
+  visibility: hidden !important;
+  z-index: -1;
+}
+
+.logo .fire {
+  opacity: 0;
+  animation: light-up 0.5s 7s linear forwards;
+}
+
+.nav-list {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+}
+.nav-list i {
+  font-size: 2rem;
+  cursor: pointer;
+}
+.nav-list li.active i {
+  color: var(--main);
+}
+.nav-list li {
+  opacity: 0;
+  position: absolute;
+}
+.nav-list.active li {
+  position: absolute;
+  opacity: 1;
+}
+.nav-list li:nth-child(1) {
+  top: 0;
+  transition: all cubic-bezier(0.85, 0.05, 0.18, 1.35) 0.3s 0.9s;
+}
+.nav-list.active li:nth-child(1) {
+  top: -6rem;
+  transition: all cubic-bezier(0.85, 0.05, 0.18, 1.35) 0.3s;
+}
+.nav-list li:nth-child(2) {
+  right: 0;
+  transition: all cubic-bezier(0.85, 0.05, 0.18, 1.35) 0.3s 0.6s;
+}
+.nav-list.active li:nth-child(2) {
+  right: -6rem;
+  transition: all cubic-bezier(0.85, 0.05, 0.18, 1.35) 0.3s 0.3s;
+}
+.nav-list li:nth-child(3) {
+  bottom: 0;
+  transition: all cubic-bezier(0.85, 0.05, 0.18, 1.35) 0.3s 0.3s;
+}
+.nav-list.active li:nth-child(3) {
+  bottom: -6rem;
+  transition: all cubic-bezier(0.85, 0.05, 0.18, 1.35) 0.3s 0.6s;
+}
+.nav-list li:nth-child(4) {
+  left: 0;
+  transition: all cubic-bezier(0.85, 0.05, 0.18, 1.35) 0.3s;
+}
+.nav-list.active li:nth-child(4) {
+  left: -6rem;
+  transition: all cubic-bezier(0.85, 0.05, 0.18, 1.35) 0.3s 0.9s;
+}
+
+.nav-indicator {
+  transition: 0.3s all ease;
+  animation: translateY 0.5s 1.5s linear forwards;
+  opacity: 0;
+  --opacity_num: 1;
+  z-index: 999;
+  /* position: relative; */
+}
+.nav-indicator p {
+  width: inherit;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+
+  position: absolute;
+  /* border: 2px solid red; */
+}
+.nav-indicator p::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1rem;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--txt-clr-primary);
+}
+.nav-indicator span {
+  font-size: 1.5rem;
+  position: absolute;
+  top: -30%;
+  right: -2rem;
+  color: var(--main);
+  font-weight: 900;
+  font-family: var(--num-font);
+
+  opacity: var(--opacity_num);
+}
+header .contact {
+  --dimension: 7rem;
+
+  font-size: 3rem;
+  font-family: var(--title-font-syne);
+
+  text-align: center;
+  border: solid 3px var(--main);
+  border-radius: 50%;
+
+  color: var(--txt-clr-primary);
+  width: var(--dimension);
+  height: var(--dimension);
+  line-height: calc(var(--dimension) - 0.5rem);
+
+  position: relative;
+  right: 0;
+  cursor: pointer;
+  transition: 0.3s transform ease, all 0.6s ease, right 0.7s linear;
+  animation: translateY 0.5s 1.5s linear forwards;
+
+  opacity: 0;
+  background: transparent;
+  visibility: hidden;
+}
+header .contact.active {
+  color: var(--main);
+}
+.orbital {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: inherit;
+  aspect-ratio: 1/1;
+  transform: translate(-50%, -50%);
+  border-radius: 50%;
+}
+.orbital::after {
+  content: "";
+  position: absolute;
+  width: 130%;
+  aspect-ratio: 1/1;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 2px dashed var(--main);
+  border-radius: inherit;
+  display: none;
+}
+.planet {
+  --dim: 0.8rem;
+  aspect-ratio: 1/1;
+  width: var(--dim);
+  border-radius: 50%;
+  background-color: var(--main);
+
+  position: absolute;
+  top: 20%;
+  right: -20%;
+  transform: translate(-50%, -50%);
+  transform-origin: 100%;
+}
+
+@keyframes translateY {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+@keyframes light-up {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes rotate-center {
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+@media (hover: hover) {
+  .logo:hover::after {
+    display: inline;
+    animation: rotate-center 5s linear infinite forwards;
+  }
+  .logo:hover #circle-fill {
+    transform-origin: center;
+    animation: rotate 3s linear forwards infinite;
+  }
+  .nav-list li:hover i {
+    color: var(--main);
+  }
+  .contact:hover .orbital::after {
+    display: inline;
+  }
+  .contact:hover .orbital {
+    animation: rotate-center 5s linear infinite forwards;
+    transform: translate(-50%, -50%);
+  }
+}

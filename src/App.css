@@ -1,0 +1,172 @@
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Audiowide&family=Electrolize&family=JetBrains+Mono:wght@100;200;300;400;500;600;700;800&family=Nobile:wght@400;500;700&family=Quattrocento&family=Raleway:wght@100;200;300;400;500;600;700;800;900&family=Syne:wght@700;800&family=Unbounded:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("./assets/FONTS/Nippo_Complete/Fonts/WEB/css/nippo.css");
+@import url("./assets/FONTS/Stardom_Complete/Fonts/WEB/css/stardom.css");
+@import url("./assets/FONTS/ClashDisplay_Complete/Fonts/WEB/css/clash-display.css");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+::-moz-selection {
+  color: var(--txt-clr-primary);
+  background: var(--main);
+}
+
+::selection {
+  color: var(--txt-clr-primary);
+  background: var(--main);
+}
+:root {
+  --bg-color: #0f0f0f;
+  --txt-clr-primary: #ffffff;
+  --txt-clr-secondary: #c1bfbf;
+  --main: #6947ef;
+  --purple: #6947ef;
+  --red: #ef476f;
+  --blue: #479eef;
+  --green: #4ec661;
+  --yellow: #cbac40;
+
+  --title-font-syne: "Syne", sans-serif;
+  --title-font-unbounded: "Unbounded", cursive;
+  --title-font-audiowide: "Audiowide", cursive;
+  --title-font-nippo: "Nippo-Variable";
+  --title-font-clash: "ClashDisplay-Variable";
+  --title-font-stardom: "Stardom-Regular";
+
+  --txt-font-abel: "Abel", sans-serif;
+  --txt-font-raleway: "Raleway", sans-serif;
+  --txt-font-electrolize: "Electrolize", sans-serif;
+  --txt-font-nobile: "Nobile", sans-serif;
+  --num-font: "JetBrains Mono", monospace;
+
+  --home-anime-delay: 0s;
+  --main-padding: 2rem;
+}
+body {
+  background-color: var(--bg-color);
+  overflow-x: hidden;
+}
+.App {
+  margin: 0 auto;
+  max-width: 1500px;
+  /* border: red 3px solid; */
+  z-index: 99;
+  position: relative;
+}
+.website {
+  display: none;
+}
+.btn-pulse {
+  font-family: var(--title-font-nippo);
+  font-size: 1.5rem;
+
+  border: 1px solid var(--main);
+  font-weight: 500;
+  padding: 1rem 2rem;
+  border-radius: 5px;
+
+  cursor: pointer;
+  z-index: 999;
+}
+.btn-pulse::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  border: 1px solid transparent;
+  border-radius: 5px;
+}
+
+.btn-pulse:hover::after {
+  border: 1px solid var(--main);
+  animation: pulse 0.8s linear infinite;
+}
+
+.btn-fill-up {
+  font-family: var(--title-font-nippo);
+  font-size: 1.5rem;
+  text-transform: capitalize;
+
+  background: transparent;
+  color: var(--txt-clr-primary);
+  border: 1px solid var(--main);
+  border-radius: 5px;
+
+  padding: 1rem 2rem;
+
+  cursor: pointer;
+  z-index: 98;
+}
+.btn-fill-up::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: var(--main);
+  transition: all linear 0.2s;
+  z-index: -1;
+}
+.btn-fill-up:hover::after {
+  height: 100%;
+  box-shadow: 0 0 2rem 0.1rem var(--main);
+}
+a,
+li {
+  list-style: none;
+  text-decoration: none;
+  color: var(--txt-clr-primary);
+}
+
+@keyframes light-up-preloader {
+  0% {
+    opacity: 0;
+    transform: translateY(5%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0%);
+  }
+}
+@keyframes pre-loader {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+    width: 0;
+    display: none;
+    visibility: hidden;
+    z-index: -1;
+  }
+}
+@keyframes rotate {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes pulse {
+  0% {
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
+  100% {
+    width: 120%;
+    height: 160%;
+    opacity: 0;
+  }
+}

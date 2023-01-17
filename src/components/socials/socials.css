@@ -1,0 +1,22 @@
+.socials {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5rem;
+
+  color: var(--txt-clr-primary);
+  font-size: 2.5rem;
+
+  opacity: 0;
+  position: absolute;
+  left: 5rem;
+  top: 50% !important;
+  transform: translateY(-50%);
+
+  animation: fade-in-up 0.5s 2s linear forwards;
+  z-index: 100;
+}
+.socials li a {
+  cursor: pointer;
+}
